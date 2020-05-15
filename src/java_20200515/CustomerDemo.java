@@ -15,6 +15,7 @@ public class CustomerDemo {
 		c1.isReleased = false;
 		
 		
+		
 		Customer c2 = new Customer();
 		c2.name = "손정의";
 		c2.email = "hoho@soft.com";
@@ -23,22 +24,46 @@ public class CustomerDemo {
 		c2.isReleased = false;
 		
 		
-		System.out.println(c1.name);
-		System.out.println(c1.email);
-		System.out.println(c1.phone);
-		System.out.println(c1.balance);
-		System.out.println(c1.isReleased);
+//		System.out.println(c1.name);
+//		System.out.println(c1.email);
+//		System.out.println(c1.phone);
+//		System.out.println(c1.balance);
+//		System.out.println(c1.isReleased);
+//		
+//		System.out.println(c2.name);
+//		System.out.println(c2.email);
+//		System.out.println(c2.phone);
+//		System.out.println(c2.balance);
+//		System.out.println(c2.isReleased);
 		
-		System.out.println(c2.name);
-		System.out.println(c2.email);
-		System.out.println(c2.phone);
-		System.out.println(c2.balance);
+		
+		
+		
+		//Q
+		Customer c3 = new Customer();
+		c3.name = "이재용";
+		c3.email = "iloveSamsumng@samsung.com";
+		c3.phone = "010-0101-0101";
+		c3.balance = 10_000_000;
+		c3.isReleased = true;
+		
 		System.out.println(c2.isReleased);
 		
-		Customer c3 = c2;
-		// 레퍼런스 타입은 참조를 할 수 있다 여러번!
-		c3.name = "손마사요시";
-		System.out.println(c2.name);
+		//Q 참조하는 기준이 달라진다.
+		
+		//c2 = c3; //c2의 객체는 c3를 참조하게된다.
+		//c3 = c2;   //c3의 객체는 c2를 참조하게된다.
+		System.out.println(c2.isReleased);
+		
+		Customer c4 = c3; // 
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
