@@ -7,7 +7,7 @@ public class Customer {
 	//객체가 생성될 때만 만들어지는 변수가 : 인스턴스변수!
 	
 	
-	public String name;
+	public String name;  //primitive data type구성되어 있는 변수 - 객체속성변수
 	public String email;
 	public String phone;
 	public double balance;

@@ -1,6 +1,9 @@
 package java_20200515;
 
 public class Test {
+	public static void main(String[] args) {
+		System.out.println("메인메소드 실행!");
+	}
 	
 
 }
@@ -13,7 +16,7 @@ public class Test {
 class box {
 	// main메소드가 실행이 안됨!
 	public static void main(String[] args) {
-		System.out.println("  ");
+		System.out.println("메인메소드 실행");
 		
 	}
 	//pull잘된지 테스트 합니다.

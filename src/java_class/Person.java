@@ -1,11 +1,48 @@
 package java_class;
 
 public class Person {
-	String name; //default -instance
-	int age;		//default 
-	long cashAmount;
-	BankAccount account; //BankAccount class account 
-	
-	
+	private String name;
+	private int age;
+	private int cashAmount;
+	private BankAccount account;
+
+	public void setName(String newName) {
+		name = newName;
+	}
+
+	public String getName() {
+		return name;
+
+	}
+
+	public void setAge(int pAge) {
+		if (pAge > 0) {
+			age = pAge;
+
+		}
+	}
+
+	public int getAge() {
+		return age;
+
+	}
+
+	public void setCashAmount(int pCashAmount) {
+			cashAmount = pCashAmount;
+	}
+
+	int getCashAmount() {
+		return cashAmount;
+
+	}
+
+	public void setAccount(BankAccount pAccount) {
+		account = pAccount;
+	}
+
+	public BankAccount getAccount() {
+		return account;
+
+	}
 
 }

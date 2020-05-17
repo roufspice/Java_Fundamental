@@ -4,10 +4,13 @@ public class CustomerDemo {
 	public static void main(String[] args) {
 		//클래스 객체 생성
 		//Customer => 타입
-		//c1 => 변수(레퍼런스)
+		//c1 => 변수(레퍼런스, 참조변수)
 		//new Customer() => 객체 생성 (*프로그램 메모리에 해당되는 object)
 		
 		Customer c1 = new Customer();
+		//클래스명 참조변수 = new 클래스명();
+		// "."을 이용하여 다른 멤버변수나 메소드에 접근이 가능해진다
+		
 		c1.name = "하대윤";
 		c1.email = "daeyoun.ha27@gmail.com";
 		c1.phone = "010-3545-2118";
@@ -51,11 +54,11 @@ public class CustomerDemo {
 		
 		//Q 참조하는 기준이 달라진다.
 		
-		//c2 = c3; //c2의 객체는 c3를 참조하게된다.
-		//c3 = c2;   //c3의 객체는 c2를 참조하게된다.
+//		c2 = c3; //c2의 객체는 c3를 참조하게된다.
+		c3 = c2;   //c3의 객체는 c2를 참조하게된다.
 		System.out.println(c2.isReleased);
 		
-		Customer c4 = c3; // 
+//		Customer c4 = c3; // 
 		
 		
 		

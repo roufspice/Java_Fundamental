@@ -10,6 +10,8 @@ public class NoticeDemo {
 		//private 접근 지정자는 같은 클래스내에서만 접근 가능합니다.
 		//n1.regdate = "2020-05-15"; // private
 		
+		
+		
 	}
 
 }

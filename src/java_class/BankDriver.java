@@ -5,8 +5,13 @@ public class BankDriver {
 		// 인간선언!!
 		Person p1 = new Person();
 		p1.name = "하대윤";
-		p1.age = 26;
+//		p1.age = 26;
+		p1.setAge(-20);
+		p1.setAge(-20);
 		p1.cashAmount = 50000;
+		
+		System.out.println(p1.getAge());
+		
 		
 		//계좌개설
 		BankAccount b1 = new BankAccount();
@@ -17,18 +22,6 @@ public class BankDriver {
 		p1.account = b1;
 		b1.owner = p1;
 		
-		b1.withdraw(10000);
-		b1.withdraw(10000);
-		b1.withdraw(10000);
-		b1.withdraw(10000);
-		b1.withdraw(10000);
-		b1.withdraw(10000);
-		b1.deposit(5000);
-		b1.deposit(5000);
-		b1.deposit(5000);
-		b1.deposit(5000);
-		b1.deposit(5000);
-		b1.deposit(5000);
 		
 		
 		
