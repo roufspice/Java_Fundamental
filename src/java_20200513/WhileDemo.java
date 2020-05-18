@@ -15,6 +15,7 @@ public class WhileDemo {
 		// 구구단을 while 문으로 작성해보자!!!
 		i = 2;
 
+		
 		while (i <= 9) {
 			int j = 1;
 			while (j <= 9) {
