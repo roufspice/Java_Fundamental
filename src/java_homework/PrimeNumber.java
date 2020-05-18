@@ -4,6 +4,7 @@ public class PrimeNumber {
 	//1부터 100까지의 소수만들기!
 	//1과 자기자신 빼고는 다 나누어 떨어지지 않음!
 	public static void main(String[] args) {
+
 		int a = 100;
 		int sum = 0;						//소수의 총합을 카운트하는 변수를 정함
 		

@@ -15,13 +15,15 @@ public class Person {
 	//모든class에서 접근가능한 public 메소드,
 	public void setAge(int pAge) {
 		if(pAge >= 0) {
-			age = pAge; 
+			age = pAge;
 		}
 	}
 	// 값을 출력하는 메소드를 만듭니다.
 	public int getAge() {
 		return age;
 	}
+	
+	
 	
 	public void setName(String pName) {
 		name = pName ;
