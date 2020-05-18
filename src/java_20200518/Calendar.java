@@ -8,8 +8,8 @@ public class Calendar {
 	
 	// year에 대한 setter 메서드
 	// setter 메서드를 이용하여 year를 변경한다.
-	public void setYear(int y) {
-		year = y;
+	public void setYear(int year) {
+		this.year = year; //인스턴스변수와 로컬변수를 구분하기위해 사용한다.
 	}
 	// year에 대한 getter 메서드
 	// getter 메서드를 이용하여 year를 가져온다.
@@ -20,10 +20,12 @@ public class Calendar {
 	
 	
 	//사용자들에게 공개해주는 기능//
-	public void set(int y, int m , int d) {
-		year = y;
-		month = m;
-		day = d;
+	//this. : 자기 자신 객체.
+	//로컬변수(지역변수)와 멤버변수를 구분할때 사용한다. 예)this.year = year;
+	public void set(int year, int month , int day) {
+		this.year = year;
+		this.month = month;
+		this.day = day;
 	}
 	
 	private int getCount() {
