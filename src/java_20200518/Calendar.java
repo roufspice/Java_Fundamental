@@ -1,33 +1,30 @@
 package java_20200518;
 
 public class Calendar {
-	
 	private int year;
 	private int month;
 	private int day;
-	
-	// year에 대한 setter 메서드
-	// setter 메서드를 이용하여 year를 변경한다.
+
+//year에 대한 setter 메서드
+//setter 메서드를 이용하여 year를 변경한다.
 	public void setYear(int year) {
-		this.year = year; //인스턴스변수와 로컬변수를 구분하기위해 사용한다.
+		this.year = year;
 	}
-	// year에 대한 getter 메서드
-	// getter 메서드를 이용하여 year를 가져온다.
+
+//year에 대한 getter 메서드
+//getter 메서드를 이용하여 year를 가져온다.
 	public int getYear() {
 		return year;
 	}
-	
-	
-	
-	//사용자들에게 공개해주는 기능//
-	//this. : 자기 자신 객체.
-	//로컬변수(지역변수)와 멤버변수를 구분할때 사용한다. 예)this.year = year;
-	public void set(int year, int month , int day) {
+
+//this. : 자기 자신 객체  
+//로컬변수와 멤버변수와 구분할 때 사용한다. 예) this.year = year;
+	public void set(int year, int month, int day) {
 		this.year = year;
 		this.month = month;
 		this.day = day;
 	}
-	
+
 	private int getCount() {
 		int totalCount = 0;
 
@@ -57,8 +54,8 @@ public class Calendar {
 		return totalCount;
 
 	}
-	
-	//사용자들에게 공개해주는 기능
+
+	// 사용자들에게 공개해주는 기능
 	public void print() {
 		// 인스턴스 메서드에서는 인스턴스 메서드를 호출할 수 있다.
 		int totalCount = getCount();
@@ -87,7 +84,5 @@ public class Calendar {
 		System.out.println(year + "년 " + month + "월 " + day + "일은  " + message + " 입니다.");
 
 	}
-
-	
 
 }

@@ -2,8 +2,9 @@ package java_class;
 
 public class SeparateCollection {
 	//String neighborhood;
-	//String type;
+	private String type;
 	private String day;     //무슨요일인지 입력하면
+	
 	//String collectDate; 
 	
 	
@@ -14,6 +15,17 @@ public class SeparateCollection {
 	public String getDay() {
 		return day;
 	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getType() {
+		return type;
+	}
+	
+	
+	
+	
 	
 	
 	//오늘이 분리수거날인지 아닌지 알려준다.
@@ -35,10 +47,19 @@ public class SeparateCollection {
 		}
 		
 	}
+	//생활쓰레기 배출방법!
+	//생활쓰레기의 구분에 따라 종류, 처리방법등을 알려주는 프로그램을 만든다.
+	//예):type = 달걀; 달갈 은(는) 일반쓰레기 입니다. 종량제봉투로 버려주세요! 라고 출력되게 만들고 싶다.
+//	public XXX throwAway(String type) {
+//		if (type == "일반쓰레기" ) {
+//			
+//		}
+		
+	}
+	
 	
 	
 		
-	}
 	
 	
 	
