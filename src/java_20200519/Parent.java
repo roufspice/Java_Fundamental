@@ -1,7 +1,8 @@
 package java_20200519;
 
-public class Parent extends Object {
-	long money;
+public class Parent /*extends Object*/ {
+	
+	int money;
 	public void makeMoney() {
 		System.out.println("Parent makeMoney()");
 	}

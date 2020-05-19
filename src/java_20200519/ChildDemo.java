@@ -18,9 +18,11 @@ public class ChildDemo {
 		
 		
 		System.out.println(c.money);
-		System.out.println(c.chicken);
 		
-		
+//		System.out.println(c.getParentMoney());
+//		System.out.println(c.chicken);
+//		
+//		
 		
 		
 	}

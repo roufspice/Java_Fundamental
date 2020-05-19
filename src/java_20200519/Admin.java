@@ -1,3 +1,4 @@
+//1
 package java_20200519;
 
 public class Admin {
@@ -16,12 +17,12 @@ public class Admin {
 	
 	//생성자(Constructor)
 	//?setter/getter 메서드를 일일이 만들어야 하나? 한번에 매개변수를 설정해서 할 수는 없을까?
-	//객체가 생성될 때 객체의 초기화 과정을 기술하는 특수한 메서드
+	//객체가 생성될 때 객체의 초기화 과정
 	//생성자는 반환값이 없고, 이름은 **클래스 이름**과 **동일**하다
 	//생성자의 역할은 '**인스턴스 변수 초기화**'
 	//**Alt + Shift + s => o
 	public Admin(String id, String pwd, String email, int level) {
-		//super(); //모든생성자에는 첫줄에 super()가 숨어있음!
+		//super(); //모든생성자에는 첫줄에 super()가 숨어있음! //**상속에 관련한 overriding
 		this.id = id;
 		this.pwd = pwd;
 		this.email = email;

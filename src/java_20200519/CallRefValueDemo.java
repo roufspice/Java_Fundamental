@@ -1,3 +1,4 @@
+//2 call by value, call by reference
 package java_20200519;
 
 public class CallRefValueDemo {
@@ -8,6 +9,7 @@ public class CallRefValueDemo {
 	}
 
 	public static void main(String[] args) {
+	
 		int i = 10;
 		int[] j = new int[] { 1, 2, 3, 4 };
 
