@@ -5,20 +5,15 @@ public class Calendar {
 	private int month;
 	private int day;
 
-//year에 대한 setter 메서드
-//setter 메서드를 이용하여 year를 변경한다.
+
 	public void setYear(int year) {
 		this.year = year;
 	}
 
-//year에 대한 getter 메서드
-//getter 메서드를 이용하여 year를 가져온다.
 	public int getYear() {
 		return year;
 	}
 
-//this. : 자기 자신 객체  
-//로컬변수와 멤버변수와 구분할 때 사용한다. 예) this.year = year;
 	public void set(int year, int month, int day) {
 		this.year = year;
 		this.month = month;
@@ -27,7 +22,6 @@ public class Calendar {
 
 	private int getCount() {
 		int totalCount = 0;
-
 		// 변수를 하나 지정해서 이전년도를 구하는 방법으로 해보자!!
 		int preYear = year - 1;
 		totalCount = ((365 * preYear) + (preYear / 4) - (preYear / 100) + (preYear / 400));
@@ -41,15 +35,11 @@ public class Calendar {
 			monthArray[1] = 29;
 
 		}
-
 		for (int i = 0; i < month - 1; i++) {
 			totalCount += monthArray[i];
-
 		}
 
-//		totalCount += 31 + 29 + 31 + 30;
 		totalCount += day;
-		// 2019년 5월12일까지의 총일 수!
 
 		return totalCount;
 
@@ -57,12 +47,9 @@ public class Calendar {
 
 	// 사용자들에게 공개해주는 기능
 	public void print() {
-		// 인스턴스 메서드에서는 인스턴스 메서드를 호출할 수 있다.
 		int totalCount = getCount();
-
 		int rest = (totalCount % 7);
-		System.out.println(rest);
-
+		//System.out.println(rest);
 		// 나머지의 숫자에 따른 요일을 출력하는 if문 구하기
 		String message = null;
 		if (rest == 1) {
