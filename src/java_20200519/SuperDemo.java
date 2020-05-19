@@ -12,7 +12,8 @@ public class SuperDemo /*extends Object*/ {
 class A /*extends Object*/{
 	A(int a){
 		
-	}
+	} 
+	
 	
 
 	

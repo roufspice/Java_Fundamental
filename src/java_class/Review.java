@@ -16,18 +16,18 @@ public class Review {
 	}
 	
 	public Review(String id, String pwd, String email) {
-		super();
 		this.id = id;
 		this.pwd = pwd;
 		this.email = email;
-		this.level = level;
+		
+	}
+	
+	public Review(String id, String pwd) {
+		this(id, pwd, null);
+		
 		
 	}
 	//생성자도 오버로딩이 가능하다
-	public Review(String id, String pwd) {
-		this(id, pwd, null );
-		
-	}
 
 }
 
