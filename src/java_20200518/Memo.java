@@ -29,8 +29,8 @@ public class Memo {
 		 * 클래스 
 		 * 1. 맴버변수(instance, static, final(대문자))
 		 * 2. 메서드(instance, static) /static메서드에서 instance변수와 instance메서드를 호출하려면 객체를 생성해야 한다.
-		 * 3. 생성자
 		 * 
+		 * 3. 생성자
 		 * 
 		 * 
 		 * 다형성(오버로딩) oop:메소드이름을 중첩해서 사용할 수 있다.
