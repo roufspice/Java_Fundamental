@@ -12,7 +12,7 @@ public class Admin {
 	public Admin() {
 		super();
 		//모든 생성자에는 super()가 숨어있음
-		//super() -부모클래스의 default 생성자를 호출해준다
+		//super() -부모클래스의 default 생성자를 호출해준다dfdf
 	}
 	
 	//생성자(Constructor)
