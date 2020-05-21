@@ -13,6 +13,9 @@ class A /*extends Object*/{
 	A(int a){
 		
 	}
+	A(){
+		
+	}
 	///**에러를 안나게 하려면?
 	
 	

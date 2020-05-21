@@ -1,5 +1,5 @@
 package java_20200514;
-
+//lottery oop로 변경해보는건 어떨까?!! 복권방에가서 1,000원~5,000원 구매한다는 가정하에
 public class LotteryDemo {
 	public static void main(String[] args) {
 		// 로또복권

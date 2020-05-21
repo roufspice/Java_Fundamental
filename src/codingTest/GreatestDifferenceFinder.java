@@ -41,7 +41,7 @@ public class GreatestDifferenceFinder {
 		//최댓값 - 최솟값 
 		//배열의 값들 중 최댓값과 최소값을 구해야 한다!!
 		if(intArray.length < 2) {
-			return 0;
+			return 0; //오류 검사
 		} else {
 			return getHighest(intArray) - getLowest(intArray);
 			//오름차순으로 한번 정리하고
