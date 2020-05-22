@@ -74,7 +74,7 @@ public class MemberManagementDemo {
 	}
 	
 	//1. 수정할 아이디를 입력받는다.
-	//2. ArrayList에 있는 고객정보에서 수정할 아이디를 찾아서 있으면 수정할 이름을  입력받고, 
+	//2. ArrayList에 있는 고객정보에서 수정할 아이디를 찾아서 있으면 수정할 이름을 입력받고, 
 	//	 ArrayList에 있는 고객정보를 수정한다. 만약, 수정할 아이디가 없으면 '수정할 아이디가 없습니다.' 메시지를 출력한다.
 	//3. ArrayList에 있는 모든 고객을 출력한다.
 	//4. print() 메서드 호출
@@ -83,7 +83,10 @@ public class MemberManagementDemo {
 		//1 
 		String id = input("아이디>");
 		//2 아이디를 찾고, 있으면(true) 고객정보를 덮어쓰기하고, 없으면(false) 수정할 아이디가 없다고 메시지를 출력한다.		
+		Member m = new Member();
+		if(id.equals(m)) {
 		
+		}
 		
 	}
 	
