@@ -11,8 +11,6 @@ public class Admin {
 	//디폴트생성자를 만들고 시작하면, 객체사용에 오류발생을 막을 수 있으니, 꼭!! 디폴트생성자를 만들고 시작하자!!
 	public Admin() {
 		super();
-		//모든 생성자에는 super()가 숨어있음
-		//super() -부모클래스의 default 생성자를 호출해준다
 	}
 	
 	//생성자(Constructor)

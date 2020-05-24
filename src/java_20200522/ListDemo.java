@@ -13,6 +13,9 @@ public class ListDemo {
 		list.add(2);
 		list.add(3);
 		list.add(4);
+		list.add(4);  //List은 중복을 허용한다!
+		
+		
 		
 		
 		//출력

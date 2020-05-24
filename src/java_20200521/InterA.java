@@ -7,5 +7,11 @@ public interface InterA extends InterB, InterC {
 		//인테페이스 메서드의 접근 한정자를 붙이지 않으면 public이 생략돼 있음
 		//abstract 생략 가능
 		void mA();
+		
+		
+		
+		
+		//인터페이스에는 abstract메소드만 사용할 수 있는가?
+		
 
 }

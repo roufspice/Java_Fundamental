@@ -5,7 +5,7 @@ public class AdminDemo {
 	public static void main(String[] args) {
 		
 		Admin a = new Admin();
-		
+		//객체선언!
 		
 		Admin a1 = new Admin("roufspice", "1234", "qawsed@gmail.com",1);
 		

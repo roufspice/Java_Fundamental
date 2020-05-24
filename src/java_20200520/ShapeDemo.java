@@ -30,6 +30,8 @@ public class ShapeDemo {
 		Shape s1 = new Circle();
 		//Shape s1 = new Rectangle();
 		s1.draw();
+		//추상메소드는 오버라이딩 해야한다1!
+		
 		
 		
 		

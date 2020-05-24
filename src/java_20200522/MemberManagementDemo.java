@@ -64,6 +64,7 @@ public class MemberManagementDemo {
 		for(Member mem : list) {
 			System.out.printf("아이디 : %s , 이름 : %s %n", mem.getId(), mem.getName());
 		}
+		System.out.println();
 		//5
 		print();
 		String inputData = input("번호를 선택하세요>");
@@ -81,14 +82,38 @@ public class MemberManagementDemo {
 	//5. 번호를 선택하세요 > 메시지를 출력한 후 키보드 입력을 받게 한다.
 	public void update() {
 		//1 
-		String id = input("아이디>");
-		//2 아이디를 찾고, 있으면(true) 고객정보를 덮어쓰기하고, 없으면(false) 수정할 아이디가 없다고 메시지를 출력한다.		
-		Member m = new Member();
-		if(id.equals(m)) {
+		String id = input("수정할 아이디>");
+		Member m = new Member(id, null);
+		int count = 0;
 		
+		//System.out.println(list.get(0).getId().equals(m.getId()));
+		
+		//2 아이디를 찾고, 있으면 수정할 이름을 입력받고, 수정한다.	
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getId().equals(m.getId())) { //같은 아이디가 있는지 찾기! 있으면 true값 리턴!
+				String newName = input("수정할 이름>");   //수정할 이름을 입력받기!
+				list.get(i).setName(newName);
+				count++;
+			} 
+		}
+		if(count != 0) {
+			System.out.printf("**'%s' 정보 수정완료!**",id);
+			System.out.println();
+		} else {
+			System.out.println("**수정할 아이디가 없습니다.**");
+			System.out.println();
+			
+		}
+		//3. ArrayList에 있는 모든 고객을 출력한다.
+			for(Member mem : list) {
+				System.out.printf("아이디 : %s , 이름 : %s %n", mem.getId(), mem.getName());
+			}
+		//4. print()호출;
+			print();
+			String inputData = input("번호를 선택하세요>");
+			run(inputData);
 		}
 		
-	}
 	
 	//1. 삭제할 아이디를 입력받는다.
 	//2. ArrayList의 Member 객체중에서 삭제할 아이디를 찾아 있으면 삭제하고
@@ -97,6 +122,43 @@ public class MemberManagementDemo {
 	//4. print() 메서드 호출
 	//5. 번호를 선택하세요> 메세지를 출력한 후 키보드 입력을 받게 한다. 
 	public void delete() {
+		String id = input("삭제할 아이디>");
+		//2-1. 아이디를 찾고.
+		Member m = new Member(id, null);
+		int count = 0;
+		
+		for(int i = 0; i < list.size();) {
+			if(m.getId().equals(list.get(i).getId())) {	// 찾는값이 true면;
+				
+				list.remove(i);
+				
+				//제거하면 끝이니까, for loop를 나간다.
+				count ++;
+			
+			} else {
+				i++;
+			}
+		}
+		if(count == 0) {
+			System.out.println("**삭제할 아이디가 없습니다.**");
+			System.out.println();
+		} else {
+			System.out.printf("**아이디 '%s'를 삭제하였습니다.**", id);
+			System.out.println();
+		}
+		
+		//3. ArrayList에 있는 모든 고객을 출력한다.
+		for (Member mem : list) {
+			System.out.printf("아이디 : %s , 이름 : %s %n", mem.getId(), mem.getName());
+			
+		}
+		//4. print()메소드 출력
+		print();
+		String inputData = input("번호를 선택하세요>");
+		run(inputData);
+		
+		
+		
 		
 	
 	}
@@ -107,6 +169,42 @@ public class MemberManagementDemo {
 	//4. print() 메서드 호출
 	//5. 번호를 선택하세요> 메세지를 출력한 후 키보드 입력을 받게 한다
 	public void search() {
+		String id = input("아이디>");
+		int count = 0;
+		//2-2 검색할 아이디를 찾아서 있으면 출력!
+		Member m = new Member(id, null);
+		for(int i = 0; i<list.size(); i++) {
+			if(m.getId().equals(list.get(i).getId())){	//검색한 아이디가 있다
+				System.out.printf("검색결과: %s",list.get(i).getId());
+				System.out.println();
+				count ++;
+			}
+		}
+		if(count == 0) {
+			System.out.println("**검색된 결과가 없습니다.**");
+			System.out.println();
+			
+		}
+		//3.
+		for(Member mem : list) {
+			System.out.printf("아이디 : %s , 이름 : %s %n", mem.getId(), mem.getName());
+			
+		}
+		System.out.println();
+		//4
+		print();
+		String inputData = input("번호를 선택하세요>");
+		run(inputData);
+		
+	 
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	

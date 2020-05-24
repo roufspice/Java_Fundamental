@@ -26,6 +26,18 @@ public class MathDemo {
 		
 		System.out.println(d1);
 		
+		int a1 = (int) Math.round(43.5);
+		
+		a1 = Math.abs(-123);
+		System.out.println(a1);
+		
+		d1 = Math.sqrt(3);
+		System.out.println(d1);
+		
+		a1 = 16;
+		System.out.println(Math.sqrt(a1));
+		
+		
 		
 		
 		

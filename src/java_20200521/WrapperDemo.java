@@ -40,7 +40,7 @@ public class WrapperDemo {
 		String s2 = "20";
 		
 		int i4 = Integer.parseInt(s1) + Integer.parseInt(s2);
-		System.out.println(i4);
+		System.out.println("i4: "+ i4);
 
 		
 		//******//
@@ -51,14 +51,25 @@ public class WrapperDemo {
 		System.out.println(s3);
 		
 		//Primitive 데이터가 자동으로 Wrapper class 변환하는 것을 "auto-boxing"
-		Integer i5 = 10;
-		Integer i6 = 20;
+		//boxing : primitive 데이터가 자동으로 Wrapper Class로 변환했다는 것을 의미한다!
+		Integer i5 = 10; //10이라는 primitive 데이터가 객체 i5가 되었다: 자동으로 boxing이 발생했다.(Wrapper class 'Integer')
+		Integer i6 = 20; //20이라는 primitive 데이터가 객체 i6에 저장되었다. : 자동으로 boxing이 발생했다.(Wrapper class 'Integer')
+		
 		
 		//Wrapper class(i5, i6)가 자동으로 Primitive 데이터 타입으로 변환하는 것 "auto-unboxing"
-		int i7 = i5 + i6;
+		int i7 = i5 + i6;  //잠시만!!! 객체끼리 더할수 있어?? 아니 원래 못하는데, Wrapper class 를 primitive로 변환해주는 un-boxing이 발생했다.
 		
 		
 		//5.0이전에는  Collection에 primitive 데이터 타입을 넣을 수 없었다 
+		
+		String s4 = "50";
+		//s4를 숫자로 만들어볼까?
+		System.out.println(Integer.parseInt(s4) + 60); //Data type: int
+		System.out.println(s4 + 60);  //Data type: string
+		
+		String s5 = String.valueOf(50);
+		
+		
 		
 		
 		

@@ -4,7 +4,7 @@ import java.lang.*;
 
 public class SuperDemo /*extends Object*/ {
 	public SuperDemo(){
-		/*super();*/
+		/*super();*///생성자구나!
 	}
 
 }

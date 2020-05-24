@@ -9,6 +9,10 @@ public class Customer {
 		this.addr = addr;
 		
 		
+		
+	}
+	public Customer() {
+		
 	}
 
 	public String getName() {
@@ -57,11 +61,15 @@ public class Customer {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "Customer [name=" + name + ", addr=" + addr + "]";
 	}
+	
+	
+	
+
+	
 	
 	
 

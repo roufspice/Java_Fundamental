@@ -4,6 +4,7 @@ public class Circle extends Shape {
 	int r;
 	
 	public void draw() {
+		
 		System.out.println("Circle draw()");
 	}
 	

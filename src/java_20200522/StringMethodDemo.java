@@ -9,15 +9,13 @@ public class StringMethodDemo {
 		char c = ssn.charAt(0);
 		System.out.println(c);
 		
-		//concat(String str) : 문자열 연결.
+		//concat(String msg) : 문자열 연결.
 		ssn = ssn.concat("abcd"); // ssn + "abcd";
 		System.out.println(ssn);
-		System.out.println(ssn.concat("1"));
-		
 		
 		String fileName ="abcd.doc";
 		//사용예시: 파일확장자에 따라 이미지가 다르게 적용되는 경우, 
-		//endsWith(String str): "str"로 끝나면 boolean true값 반환 or false값 반환
+		//endsWith(String msg): "msg"로 끝나면 boolean true값 반환 or false값 반환
 		if(fileName.endsWith("doc")) {
 			System.out.println("Word이미지 삽입()");
 		} else if (fileName.endsWith("pdf")) {
@@ -51,6 +49,7 @@ public class StringMethodDemo {
 		//indexOf(String str) : str 문자열의 위치를 반환
 		int index = ssn.indexOf("-");
 		System.out.println(index);
+		//문자열에 몇번 인덱스부터 ~ 몇번 인덱쓰까지 호출하고 싶다면, indexOf를 적절하게
 		
 		
 		
@@ -58,6 +57,7 @@ public class StringMethodDemo {
 		
 		//?lastIndexof(String str) : str 문자열의 마지막 인덱스 위치를 반환! (실행과정: 문자열 마지막에서부터 반대로  찾고, 반환값은 처음부터 카운팅한 인덱스번호이다.)
 		System.out.println(fileName.lastIndexOf("."));
+		
 		
 		
 		// 배열의 길이: length , 문자열의 길이: length()
