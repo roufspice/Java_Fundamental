@@ -44,20 +44,26 @@ public class Lotto {
 			System.out.print(value + "\t");
 		}
 	}
-	
-	//몇장사는데?
-	public void buyLotto(int number) {
+
+	// 몇장사는데?
+	// 예외발생, 입력을 안받거나, 음를 입력한다거나
+	public void buyLotto (int number) throws IncorrectNumberException{
 		int count = 0;
-		
-		System.out.printf("\tLOTTO: %d장, 금액: %,d%n", number, number*1000);
-		System.out.println("------------------------------------------");
-		System.out.println("------------------------------------------");
-		while(count < number) {
-			count++;
-			getLotto();
-			System.out.println();
+		if (number >= 0) {
+
+			System.out.printf("\tLOTTO: %d장, 금액: %,d%n", number, number * 1000);
 			System.out.println("------------------------------------------");
-			
+			System.out.println("------------------------------------------");
+			while (count < number) {
+				count++;
+				getLotto();
+				System.out.println();
+				System.out.println("------------------------------------------");
+
+			}
+		} else {
+			//입력값이 음수를 입력한다면
+			throw new IncorrectNumberException("1장이상 구매하셔야 합니다");
 		}
 	}
 

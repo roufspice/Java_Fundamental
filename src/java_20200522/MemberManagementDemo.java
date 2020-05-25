@@ -99,7 +99,7 @@ public class MemberManagementDemo {
 		if(count != 0) {
 			System.out.printf("**'%s' 정보 수정완료!**",id);
 			System.out.println();
-		} else {
+		} else { //오류처리로 만들 수 있지 않을까 싶은데... 받는값이 없으면, 수정할 아이디가 없다고
 			System.out.println("**수정할 아이디가 없습니다.**");
 			System.out.println();
 			
@@ -139,7 +139,7 @@ public class MemberManagementDemo {
 				i++;
 			}
 		}
-		if(count == 0) {
+		if(count == 0) { //삭제할 아이디가 없다고 하면 되지 않을까나.
 			System.out.println("**삭제할 아이디가 없습니다.**");
 			System.out.println();
 		} else {
@@ -221,3 +221,5 @@ public class MemberManagementDemo {
 
 
 }
+
+//오류처리를 안배웠기 때문에, int count =0; 0이면 참, 1이면 거짓으로 구분짓고 출력한다는 공식을 대입
