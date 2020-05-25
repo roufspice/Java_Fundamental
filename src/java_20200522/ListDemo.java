@@ -14,6 +14,11 @@ public class ListDemo {
 		list.add(3);
 		list.add(4);
 		list.add(4);  //List은 중복을 허용한다!
+		//
+		list.add(3,20);
+		//한칸씩 밀려서 들어가는구나
+		
+		
 		
 		
 		
@@ -21,7 +26,7 @@ public class ListDemo {
 		//출력
 		for (int i = 0; i < list.size(); i++) {
 			Integer i1 = list.get(i);
-			System.out.println(i1);
+			System.out.print(i1 + " ");
 			
 			
 		}
