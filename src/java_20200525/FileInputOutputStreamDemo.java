@@ -17,12 +17,13 @@ public class FileInputOutputStreamDemo {
 		FileOutputStream fos = null;
 
 		try {
-			fis = new FileInputStream("c:\\dev\\jdk-11.0.7_windows-x64_bin.exe");
-			fos = new FileOutputStream("c:\\dev\\jdk.exe");
+			fis = new FileInputStream("c:\\dev\\jdk-11.0.7_windows-x64_bin.exe"); //읽을대상
+			fos = new FileOutputStream("c:\\dev\\jdk.exe"); //출력대상
 			
 			//fis.read() : 1byte 읽어서 반환한다. 더이상 읽을 byte가 없으면 -1을 반환한다.
 			int readByte = 0;
 			while ((readByte = fis.read()) != -1) {	//더이상 읽을 byte가 없을 때까지 무한반복;
+													//.read():읽어올  byte가 없으면 -1이 나옴
 				//fos.write(~) : 1 byte 쓰기
 				fos.write(readByte);
 			}
