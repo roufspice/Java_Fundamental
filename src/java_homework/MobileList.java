@@ -22,25 +22,14 @@ public class MobileList {
 		
 		MobileList mbl = new MobileList();
 		
-		ArrayList<Mobile> l1 = mbl.checkList();
-		//object를 넣었으니까, 삭제하려면, list.get(0)
-		l1.remove(l1.get(0));
+		ArrayList<Mobile> list = mbl.checkList();
 		
-		int num = l1.size();
-		System.out.println(num);
-		for (Mobile m : l1) {
-			System.out.print(m.getModel() + ",");
-			
+		for(Mobile m : list) {
+			System.out.println(m.getModel());
 		}
+		int price = list.get(0).getPrice();
+		System.out.println(price);
 		
-		l1.add(new Mobile("Galaxy S20 Ultra", 1_595_000, 480_000));
-		System.out.println();
-		
-		//main 메소드에서도 추가할 수 있네~~ ArrayList에 g
-		for (Mobile m : l1) {
-			System.out.print(m.getModel() + ",");
-			
-		}
 		
 		
 		
