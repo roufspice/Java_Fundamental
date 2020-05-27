@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 public class NaverFinance {
 	public static void main(String[] args) {
 
-		String url = "https://finance.naver.com//item/sise_day.nhn?code=035720";  //정확한 url찾기와
+		String url = "https://finance.naver.com//item/sise_day.nhn?code=035720";  //정확한 url찾기와!
 
 		Document doc = null;
 		try {
