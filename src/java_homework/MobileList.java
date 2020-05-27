@@ -14,6 +14,7 @@ public class MobileList {
 		list.add(new Mobile("Galaxy Fold", 1_998_700, 500_000));
 		list.add(new Mobile("Galaxy A51 5G", 572_000, 150_000));
 		
+		
 		return list;
 		
 	}
