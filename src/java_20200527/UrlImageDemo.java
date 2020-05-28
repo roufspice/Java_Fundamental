@@ -30,15 +30,17 @@ public class UrlImageDemo {
 		fos = new FileOutputStream("c:\\dev\\image.png");
 		
 		int readByteCount = 0;
-		//byte[] readBytes = new byte[1024*8];
+		byte[] readBytes = new byte[1024*8];
 		
-		while((readByteCount = bis.read())!= -1) {
-			fos.write(readByteCount);
-			
+		long start = System.currentTimeMillis();
+		
+		while((readByteCount = bis.read(readBytes))!= -1) {
+			fos.write(readBytes,0,readByteCount);	
 		}
+		long end = System.currentTimeMillis();
 		fos.flush();
 		
-		
+		System.out.println(end-start);
 		
 	
 	}

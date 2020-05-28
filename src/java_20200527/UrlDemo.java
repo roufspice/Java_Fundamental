@@ -17,6 +17,7 @@ public class UrlDemo {
 		String path = url.getPath();
 		String query = url.getQuery();
 		String reference = url.getRef();
+	
 		
 		
 		System.out.printf("protocol: %s%n",protocol);
@@ -26,9 +27,9 @@ public class UrlDemo {
 		System.out.printf("query: %s%n",query);
 		System.out.printf("ref: %s%n",reference);
 		
-		InputStream in = url.openStream(); //html 정보
+		InputStream in = url.openStream(); //url에 연결되어있는 소스코드(html)을 가져다 올 수 있음!
 		
-		//url 데이터가 문자로구성되어있기 때문에 스트림은 1byte스트림보다 2byte스트림으로 처리하기 편하고
+		//url 데이터가 문자로구성되어있기 때문에 2byte스트림으로 처리하기 편하고
 		//한줄씩 처리하는 편의성을 위해  BufferedReader를 사용했다.
 		InputStreamReader isr = new InputStreamReader(in);
 		BufferedReader br = new BufferedReader(isr);
@@ -36,6 +37,7 @@ public class UrlDemo {
 		String readLine = null;
 		while((readLine = br.readLine())!=null) {
 			System.out.println(readLine);
+			//파일로저장하고싶다면, BufferedWriter응용하면 된다.한줄씩 받아오는 newLine()을 쓰고싶어서
 		}
 		
 		in.close();
