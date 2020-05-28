@@ -27,13 +27,14 @@ public class UrlDemo {
 		System.out.printf("query: %s%n",query);
 		System.out.printf("ref: %s%n",reference);
 		
-		InputStream in = url.openStream(); //url에 연결되어있는 소스코드(html)을 가져다 올 수 있음!
+		InputStream in = url.openStream(); //url에 연결되어있는 소스코드(html)을 가져다 올 수 있음! 가져와서 InputStream으로 
 		
-		//url 데이터가 문자로구성되어있기 때문에 2byte스트림으로 처리하기 편하고
+		//url 데이터가 문자로구성되어있기 때문에 2byte스트림으로 처리하기 편하고 (가져온 소스는 InputStream :1byte stream)
 		//한줄씩 처리하는 편의성을 위해  BufferedReader를 사용했다.
 		InputStreamReader isr = new InputStreamReader(in);
 		BufferedReader br = new BufferedReader(isr);
 		
+		//BuffferedStream.readLine()활용해서 String 타입으로 출력하는게 쉽다.
 		String readLine = null;
 		while((readLine = br.readLine())!=null) {
 			System.out.println(readLine);

@@ -16,9 +16,8 @@ public class ApiExamShortenUrl {
         String clientId = "xxh_lsLCnRczppK9D8JW"; //애플리케이션 클라이언트 아이디값"
         String clientSecret = "OOWLi8glhi"; //애플리케이션 클라이언트 시크릿값"
 
-        String originalURL = "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EC%A0%95%EB%B6%80%EC%A7%80%EC%9B%90%EA%B8%88";
-        String apiURL = "https://openapi.naver.com/v1/util/shorturl?url=" + "https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=%EC%A0%95%EB%B6%80%EC%A7%80%EC%9B%90%EA%B8%88";
-
+        String originalURL = "http://akei.or.kr/bbs/board.php?bo_table=schedule&sfl=wr_subject&sop=and&sop=and&sfl=wr_subject&searchYear=2020&searchMonth=&page=1";
+        String apiURL = "https://openapi.naver.com/v1/util/shorturl?url=" + "http://akei.or.kr/bbs/board.php?bo_table=schedule&sfl=wr_subject&sop=and&sop=and&sfl=wr_subject&searchYear=2020&searchMonth=&page=1";
         Map<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("X-Naver-Client-Id", clientId);
         requestHeaders.put("X-Naver-Client-Secret", clientSecret);
