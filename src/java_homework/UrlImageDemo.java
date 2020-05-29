@@ -23,6 +23,7 @@ public class UrlImageDemo {
 	
 		
 			doc = Jsoup.connect(url).get();
+			//jsPath : >td.pdImg > img"
 			Elements trElements = doc.select(".pdImg img");
 			
 			for(int i =0; i<trElements.size(); i++) {
@@ -34,7 +35,7 @@ public class UrlImageDemo {
 				URL imgUrl = new URL(imgSrcUrl);
 				InputStream in = imgUrl.openStream();
 				bis = new BufferedInputStream(in);
-				fos = new FileOutputStream("저장경로");
+				fos = new FileOutputStream("c:\\dev\\images\\" + "image" + i+1 + ".jpg" );
 				
 				int readByteCount = 0;
 				byte[] readBytes = new byte[1024*8];
@@ -47,6 +48,7 @@ public class UrlImageDemo {
 			} 
 			bis.close();
 			fos.close();
+			
 			
 			
 			
