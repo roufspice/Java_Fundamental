@@ -90,7 +90,7 @@ public class StringMethodDemo {
 		//응용문제
 		//해당 도메인만 추출해보시오
 		url = "https://docs.oracle.com/javase/8/docs/api/";
-		String urlBasic = url.substring(0,(url.lastIndexOf("com"))+3);
+		String urlBasic = url.substring(0,(url.lastIndexOf("j"))-1);
 		System.out.println(urlBasic);
 		
 		
