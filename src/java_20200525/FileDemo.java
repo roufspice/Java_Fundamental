@@ -8,7 +8,7 @@ import java.util.Calendar;
 public class FileDemo {
 	public static void main(String[] args) {
 		/* File 클래스
-		 * 1. 디렉토리 생성(v)
+	 * 1. 디렉토리 생성(v)
 		 * 2. 파일크기(v)
 		 * 3. 파일이름 
 		 * 4. 파일경로

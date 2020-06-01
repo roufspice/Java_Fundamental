@@ -45,6 +45,19 @@ public class Exam04 {
 		System.out.println(list.get(0).equals(list.get(2)));
 		
 		
+		//
+		String test ="123,456.45".replaceAll(",", "");
+		double d = Double.parseDouble(test);
+		
+		System.out.println(d);
+		
+		String test1 = String.format("%,.2f", d);
+		System.out.println(test1);
+		
+		
+		
+		
+		
 		
 		
 		

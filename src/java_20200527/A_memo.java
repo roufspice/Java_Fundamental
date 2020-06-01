@@ -9,5 +9,8 @@ public class A_memo {
 	//URL과 IO의 InputStream의 원리를 이해하면서 크롤링을 해본다.
 	//Url의 html을 파일에 출력하는 연습!
 	//Url을 활용하여 이미지파일을 파일에 출력하는 연습!
+	
+	// https://docs.oracle.com/javase/8/docs/api/ "
+	// protocol, host, path, 
 
 }

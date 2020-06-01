@@ -1,4 +1,4 @@
-package java_homework;
+package java_homework.array;
 
 public class ArrayEx01 {
 	public static void main(String[] args) {
