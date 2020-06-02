@@ -3,12 +3,12 @@ package pokemonGo;
 public class Pokemon {
 	
 	private String name;
-	private String type1;
-	private String type2;
+	//private String type1;
+	//private String type2;
 	private int cp;
 	
 	public Pokemon(String name) {
-		this.name = name.trim();
+		this.name = name;
 		
 	}
 	public Pokemon() {

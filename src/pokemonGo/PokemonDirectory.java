@@ -3,54 +3,55 @@ package pokemonGo;
 import java.util.ArrayList;
 
 public class PokemonDirectory {
-	ArrayList<Pokemon> pokemonList = new ArrayList<>();
+	ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
 
 	// 포켓몬 도감에 추가 메소드
-	public void pokemonUpdate(String newName) {
+	public void pokemonGet(String newName) {
+		boolean isExisted = false; // 포켓몬이 존재하는가?
 		Pokemon p1 = new Pokemon(newName.trim()); // 띄어쓰기 허용하지 않음
 		// 첫번째 입력되는 포켓몬
 		if (pokemonList.size() == 0) {
 			pokemonList.add(p1);
-			System.out.printf("%s 을(를) 포켓몬 도감에 등록하였습니다.%n", newName.trim());
+			System.out.printf("'%s' 을(를) 포켓몬 도감에 등록하였습니다.%n", newName);
 			System.out.println("도감에 첫번째 포켓몬을 등록하였습니다!! 축하합니다!!");
-			System.out.printf("%s 도감 번호는 '%d'입니다.%n", newName.trim(), pokemonList.size());
+			System.out.printf("'%s' 도감 번호는 '%d'입니다.%n", newName, 1);
 			System.out.println("=================================");
-		} else {
-			// 두번째 입력되는 포켓몬 부터는 중복체크를 한다.
+		}
+		// 두번째 입력되는 포켓몬 부터는 중복체크를 한다.
+		else {
 			int i = 0;
-			int count = 0;
 			while (i < pokemonList.size()) {
-				String listName = pokemonList.get(i).getName();
-				if (newName == listName) {
-					System.out.printf("이미 %s(는)은 도감에 있습니다.%n", newName.trim());
-					System.out.println("=================================");
-					count++;
+				if (p1.getName().equals(pokemonList.get(i).getName())) { 
+					System.out.println("이미 찾은 포켓몬입니다. 도감을 확인해주세요~");
+					isExisted = true;
+					// 실행하지 않고 밖으로 빠져나온다.
+				}
+				if (isExisted) {
 					break;
-
 				} else {
 					i++;
-
 				}
-
 			}
-			if (count != 0) {
+			if (!isExisted) {
 				pokemonList.add(p1);
-				System.out.printf("%s (을)를 포켓몬 도감에 등록하였습니다.%n", newName.trim());
-				System.out.println("등록하신 포켓몬은 등록순서대로 도감번호를 부여받습니다.");
-				System.out.printf("%s 도감 번호는 '%d'입니다.%n", newName.trim(), pokemonList.size());
-				System.out.println("=================================");
-
+				System.out.printf("'%s' (을)를 새롭게 도감에 등록하였습니다.%n", newName);
 			}
-
 		}
+		System.out.println("현재 포켓몬도감 찾은 포켓몬 : " + pokemonList.size() + "마리");
+		System.out.println("==================================");
 
 	}
 
-	// 포켓몬 찾기
-
-	public static void main(String[] args) {
-		PokemonDirectory pd1 = new PokemonDirectory();
-		System.out.println(pd1.pokemonList.size());
-	}
+	//포켓몬 찾기 메소드!!
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
