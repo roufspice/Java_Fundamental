@@ -42,7 +42,14 @@ public class PokemonDirectory {
 
 	}
 
-	//포켓몬 찾기 메소드!!
+	//포켓몬 도감 리스트 뽑아오기!!
+	public void loadDirectory() {
+		for(int i =0; i<pokemonList.size(); i++) {
+			System.out.printf("No.%d %s%n",i+1,pokemonList.get(i).getName());
+			
+		}
+		System.out.println("===================================");
+	}
 	
 	
 	

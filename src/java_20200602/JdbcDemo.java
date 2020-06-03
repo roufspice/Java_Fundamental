@@ -18,7 +18,7 @@ public class JdbcDemo {
 			// TODO Auto-generated catch block
 			System.err.println("드라이버 로드 실패!");
 		}
-
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
