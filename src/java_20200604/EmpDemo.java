@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class EmpDemo {
 	public static void main(String[] args) {
-		EmpDao dao = new EmpDao();
+		EmpDao dao = EmpDao.getInstance();
+		
+		
+		
+		
 		int no = 9000;
 		String name = "제이에스티나";
 		String job = "ANALYIST";
@@ -69,6 +73,8 @@ public class EmpDemo {
 		} else{
 			System.out.println("회원정보가 없습니다.");
 		}
+		
+		
 		
 	}
 	

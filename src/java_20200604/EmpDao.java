@@ -8,13 +8,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmpDao {
+	//1. Singleton Pattern 코딩
+	//1) 생성자의 접근한정자를 private으로 설정한다.
+	//2) 해당 클래스의 객체를 생성할 수 있는 변수를 static으로 선언한다.
+	//3) 해당 클래스의 객체를 생성할 수 있는 메소드를 static으로 만든다.
 	
-	String dbUrl = "jdbc:mysql://localhost:3306/kpc";
-	String user = "kpc12";
-	String pw = "kpc1234";
+	private static EmpDao dao;
+	
+	public static EmpDao getInstance() {
+		if(dao == null) {
+			dao = new EmpDao();
+		}
+		return dao;
+	}
 			
-	
-	public EmpDao() {
+	private EmpDao() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -31,7 +39,7 @@ public class EmpDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			con = DriverManager.getConnection(dbUrl, user, pw);
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc", "kpc12" , "kpc1234");
 			StringBuffer sql = new StringBuffer();
 			sql.append("INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno) ");
 			sql.append("VALUES(?, ?, ?, ?, CURDATE(), ?, ?, ?)" );
@@ -54,7 +62,8 @@ public class EmpDao {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} finally {
-			close(con, pstmt);
+			close(con, pstmt, null);
+			
 		}
 		
 		
@@ -68,7 +77,7 @@ public class EmpDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			con = DriverManager.getConnection(dbUrl, user, pw);
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc", "kpc12" , "kpc1234");
 			StringBuffer sql = new StringBuffer();
 			sql.append("UPDATE emp ");
 			sql.append("SET ename = ?, job = ?, mgr = ?, hiredate = CURDATE(), sal = ?, comm = ?, deptno = ? ");
@@ -86,20 +95,15 @@ public class EmpDao {
 			
 			resultCount = pstmt.executeUpdate();
 			
-			
-			
-			
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} finally {
-			close(con, pstmt);
+			close(con, pstmt, null);
 		}
-		
-		
-		
 		return resultCount;
 	}
+	
 	
 	public int delete(int num) {
 		int resultCount = 0;
@@ -108,7 +112,7 @@ public class EmpDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			con = DriverManager.getConnection(dbUrl, user,pw);
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc", "kpc12" , "kpc1234");
 			StringBuffer sql = new StringBuffer();
 			sql.append("DELETE FROM emp WHERE empno = ? ");
 			
@@ -122,23 +126,12 @@ public class EmpDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			close(con, pstmt);
-			
+			close(con, pstmt, null);
 		}
-		
 		return resultCount;
 	}
 
 
-	private void close(Connection con, PreparedStatement pstmt) {
-		try {
-			if(pstmt != null) pstmt.close();
-			if(con != null) con.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
 	//limit 활용한 select!
 	public ArrayList<EmpDto> select(int start, int len){
@@ -150,7 +143,7 @@ public class EmpDao {
 		ResultSet rs = null;
 		
 		try {
-			con = DriverManager.getConnection(dbUrl, user, pw);
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc", "kpc12" , "kpc1234");
 			StringBuffer sql = new StringBuffer();
 			sql.append("SELECT empno, ename, job, mgr, date_format(hiredate,'%Y.%m.%d'), sal, comm, deptno ");
 			sql.append("FROM emp ");
@@ -184,6 +177,7 @@ public class EmpDao {
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, rs);
+			
 		}
 		
 		
@@ -200,7 +194,7 @@ public class EmpDao {
 		ResultSet rs = null;
 		
 		try {
-			con = DriverManager.getConnection(dbUrl, user, pw);
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc", "kpc12" , "kpc1234");
 			StringBuffer sql = new StringBuffer();
 			
 			sql.append("SELECT empno, ename, job, mgr, date_format(hiredate,'%Y.%m.%d') hiredate, sal, comm, deptno ");
@@ -241,7 +235,6 @@ public class EmpDao {
 		
 	}
 
-
 	private void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if(rs != null) rs.close();
@@ -253,6 +246,7 @@ public class EmpDao {
 			e.printStackTrace();
 		}
 	}
+
 	
 
 }
