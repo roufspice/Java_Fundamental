@@ -8,7 +8,7 @@ public class PokemonDirectory {
 	// 포켓몬 도감에 추가 메소드
 	public void pokemonGet(String newName) {
 		boolean isExisted = false; // 포켓몬이 존재하는가?
-		Pokemon p1 = new Pokemon(newName.trim()); // 띄어쓰기 허용하지 않음
+		Pokemon p1 = new Pokemon(newName.trim(), 0); // 띄어쓰기 허용하지 않음
 		// 첫번째 입력되는 포켓몬
 		if (pokemonList.size() == 0) {
 			pokemonList.add(p1);
@@ -50,6 +50,8 @@ public class PokemonDirectory {
 		}
 		System.out.println("===================================");
 	}
+	
+	//포켓몬 능력치 수정하기!
 	
 	
 	

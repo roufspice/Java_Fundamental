@@ -11,17 +11,22 @@ import java.util.ArrayList;
 //DAO : Data Access Object 
 //Insert into, Update, Delete, Select
 public class MemberDao {
-
-	// 1. insert()
-	public int insert(MemberDto m) {
-		int resultCount = 0;
-
+	
+	public MemberDao() {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+	}
+
+	// 1. insert()
+	public int insert(MemberDto m) {
+		int resultCount = 0;
+
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
@@ -107,12 +112,7 @@ public class MemberDao {
 	public int delete(int num) {
 		int resultCount = 0;
 
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
@@ -154,12 +154,7 @@ public class MemberDao {
 
 		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
 
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -209,13 +204,6 @@ public class MemberDao {
 	public MemberDto select(int num) {
 		MemberDto mdto = new MemberDto();
 
-		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
