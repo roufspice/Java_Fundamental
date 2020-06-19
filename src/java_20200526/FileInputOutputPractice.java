@@ -15,7 +15,7 @@ public class FileInputOutputPractice {
 		try {
 			fis = new FileInputStream("c:\\dev\\screen.exe");  //소스(파일 입력)
 			fos = new FileOutputStream("c:\\dev\\screen.png"); //(파일출력)	
-			
+			//1byte stream
 			int readByteCount = 0;
 			byte[] readBytes = new byte[1024*8];
 			

@@ -1,69 +1,63 @@
-package java_20200603;
+package pokemonGo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-public class MemberDao1 {
+public class PokemonDao {
 	
-	public static int insert(MemberDto dto) {
-		int resultCount = 0;
-		
+	public static int insert(PokemonDto dto) {
+		int resultCount =0;
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
+			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc","kpc12","kpc1234");
-			
+			//2. 데이터베이스와 연결을 시도한다.
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kpc", "kpc12","kpc1234");
+			//3.  sql문을 전송할 PreparedStatement 생성
 			StringBuffer sql = new StringBuffer();
-			sql.append("INSERT INTO member(num, NAME, addr) ");
-			sql.append("VALUES(?, ?, ?) ");
+			sql.append("INSERT INTO pokemon(p_num, p_name, p_attr) ");
+			sql.append("VALUES(?, ?, ?) 						   ");
+			
 			
 			pstmt = con.prepareStatement(sql.toString());
-			//바인딩변수
+			
+			// 4바인딩 변수설정
 			int index = 0;
 			pstmt.setInt(++index, dto.getNum());
 			pstmt.setString(++index, dto.getName());
-			pstmt.setString(++index, dto.getAddr());
+			pstmt.setString(++index, dto.getAttr());
 			
 			resultCount = pstmt.executeUpdate();
 			
 			
-			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
+			
 				try {
-					if(pstmt != null) pstmt.close();
-					if(con != null)con.close();
+					if(pstmt!= null)pstmt.close();
+					if(con!= null) con.close();
+					
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			
 		}
-		
-		
 		return resultCount;
 	}
 	
-	
-	
-	public static ArrayList<MemberDto> select(int start, int end){
-		
-		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
-		//jdbc연결
+	public static int update(PokemonDto dto) {
+		int resultCount =0;
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -73,29 +67,17 @@ public class MemberDao1 {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		
 		try {
-			con = DriverManager.getConnection("org.mariadb.jdbc.Driver");
-			//sql문 전송
-			StringBuffer sql = new StringBuffer();
-			sql.append("SELECT num, NAME, addr ");
-			sql.append("FROM member ");
+			//데이터베이스와 연결하고! -> sql문을 전송한다.
+			con = DriverManager.getConnection("jdbc:mysql//localhost:3306/kpc","kpc12","kpc1234");
 			
+			StringBuffer sql = new StringBuffer();
+			sql.append("UPDATE pokemon 	   				  ");
+			sql.append("SET p_name =?, p_attr =?  ");
+			sql.append("WHERE p_num = ? 					");
 			
 			pstmt = con.prepareStatement(sql.toString());
-			//바인딩변수 필요없음!
-			
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				int index = 0;
-				int num = rs.getInt(++index);
-				String name = rs.getString(++index);
-				String addr = rs.getString(++index);
-				list.add(new MemberDto(num, name, addr));
-			}
-			
 			
 			
 		} catch (SQLException e) {
@@ -104,11 +86,16 @@ public class MemberDao1 {
 		}
 		
 		
-		return list;
+		
+		return resultCount;
+		
 	}
-
 	
-	
-	
+	public static int delete(PokemonDto dto) {
+		int resultCount=0;
+		return resultCount;
+		
+		
+	}
 
 }

@@ -22,6 +22,14 @@ public class FileReaderWriterDemo {
 			}
 			*/
 			
+			/* int readCharCount =0;
+			 * char [] readChars = new char[1024];
+			 * while((readCharCount = fr.read(readChars) != -1){
+			 * 		fw.write(readChars, 0, reaCharCount);
+			 * }
+			 * 
+			 * */
+			
 			int readCharCount = 0;
 			char[] readChars = new char[1024];
 			while((readCharCount = fr.read(readChars)) != -1) {

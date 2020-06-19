@@ -27,6 +27,8 @@ public class PokemonGoDemo {
 		
 		myPd.loadDirectory();
 		
+		myPd.pokemonGet("리자몽");
+		
 		
 		
 		
